@@ -8,3 +8,6 @@
 .navbar_txt{
     @apply  w-20 text-center h-9 text-black font-mainTxt border-black hover:bg-black  hover:text-white hover:rounded-full
 }
+.footer_txt{
+   @apply font-medium
+}
