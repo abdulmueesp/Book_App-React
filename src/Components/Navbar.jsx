@@ -7,14 +7,14 @@ const Navbar = () => {
   return (
     <div className="w-full  h-16 border flex justify-between">
       <div className="flex space-x-2   items-center lg:ml-0  xl:ml-28">
-        <img src={logo} alt="" className="w-20 h-12" />
-        <h1 className="font-headTxt font-semibold text-lg">Book Palace</h1>
+        <img src={logo} alt="" className=" w-10 h-6 sm:w-20 sm:h-12" />
+        <h1 className="font-headTxt font-semibold text-sm sm:text-lg ">Book Palace</h1>
       </div>
       {/* search bar  */}
-      <div className=" flex  items-center h-16 w-96  ">
+      <div className=" flex  items-center h-16 md:w-96  sm:min-w-fit ">
         <input
           placeholder="Title,Author or Publisher"
-          className=" border-2 border-red-500  h-8 lg:w-64 xl:w-80 "
+          className=" border-2 border-red-500  h-8  xl:w-80 md:w-80"
         />
         <button className="bg-red-500 h-8 w-8 flex items-center justify-center">
           <svg
@@ -30,11 +30,12 @@ const Navbar = () => {
               strokeLinejoin="round"
               d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
             />
+
           </svg>
         </button>
       </div>
       {/* menu responsive button  */}
-      <button className="lg:hidden" >
+      <button className="lg:hidden mr-5" >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
