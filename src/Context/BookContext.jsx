@@ -16,14 +16,19 @@ const BookContext = ({children}) => {
         console.log("useeffect working");
     },[]);
        
-    const handleSubmit=(values,{resetForm})=>{
-        const newFormData=[...formData,values]
-        setFormData(newFormData);
-        localStorage.setItem('formData',JSON.stringify(newFormData));
-        resetForm();
-
-        
-    }
+    const handleSubmit = (values, { resetForm }, indexToDelete) => {
+        if (indexToDelete !== undefined) {
+            const updatedFormData = formData.filter((_, index) => index !== indexToDelete);
+            setFormData(updatedFormData);
+            localStorage.setItem('formData', JSON.stringify(updatedFormData));
+            console.log("delete worked");
+        } else {
+            const newFormData = [...formData, values];
+            setFormData(newFormData);
+            localStorage.setItem('formData', JSON.stringify(newFormData));
+            resetForm();
+        }
+    };
 
 
   return (
