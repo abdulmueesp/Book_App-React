@@ -1,9 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import AdminNavbar from "../../Components/AdminNavbar"
 import { Formik,Form,Field} from 'formik'
 import * as yup from 'yup';
+import { FormDataContext } from '../../Context/BookContext';
+
+
 const AdminForm = () => {
     
+  const {handleSubmit}=useContext(FormDataContext);
+
+  const handleFileChange = (event, setFieldValue) => {
+    const reader = new FileReader();
+    const file = event.currentTarget.files[0];
+    reader.onloadend = () => {
+      setFieldValue("image", reader.result);
+    };
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  };
+
    const validationSchema=yup.object({
     name:yup.string().required("name is not required"),
     Author:yup.string().required("Author is not required"),
@@ -40,12 +56,9 @@ const AdminForm = () => {
            <Formik
               initialValues={initialValues}
               validationSchema={validationSchema}
-              onSubmit={(values, { resetForm }) => {
-                console.log(values);
-                resetForm();
-              }}
+              onSubmit={handleSubmit}
            >
-             {({ errors,touched}) => (
+             {({ errors,touched,setFieldValue}) => (
             <Form>
               
             {/* main / ivde first */}
@@ -120,7 +133,12 @@ const AdminForm = () => {
                {/* image  */}
                <div className='w-[350px] h-[75px] bg-white flex flex-col'>
                 <label htmlFor="" className='font-bold'>image</label>
-                <Field type="file" name="image" placeholder="enter Publisher name" className={`adminform_input`} />
+               < input 
+                      type="file" 
+                      name="image" 
+                      className='adminform_input' 
+                      onChange={(event) => handleFileChange(event, setFieldValue)} 
+                    />
                 {errors.image && touched.image ? <div className='text-red-600'>{errors.image}</div> : null}
                </div>
                <div className='w-[350px] h-[75px]  flex justify-start items-center'>

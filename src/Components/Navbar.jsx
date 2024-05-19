@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "../assets/logo2.png";
 import Popular from "./Popular";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const [select, setSelect] = useState(0);
   const [open,setOpen]=useState(false);
@@ -68,7 +69,7 @@ const Navbar = () => {
               select === 0 ? "border-b-4" : "border-white"
             }`}
           >
-            <a href="#"> Home</a>
+             <Link to="/">Home</Link>
           </li>
 
           <li
@@ -77,7 +78,9 @@ const Navbar = () => {
               select === 1 ? "border-b-4" : "border-white"
             }`}
           >
-            <a href="#">Books</a>
+           <Link to="/books">
+           Books
+           </Link>
           </li>
 
           <li

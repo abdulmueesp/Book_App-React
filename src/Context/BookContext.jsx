@@ -1,12 +1,12 @@
 import React, { createContext, useEffect, useState } from 'react'
 import AdminForm from '../Pages/Admin/AdminForm';
-
+import AdminBooks from '../Components/AdminBooks';
 
 
    export const FormDataContext=createContext();
 
 
-const BookContext = () => {
+const BookContext = ({children}) => {
      
     const [formData,setFormData]=useState([]);
 
@@ -22,12 +22,13 @@ const BookContext = () => {
         localStorage.setItem('formData',JSON.stringify(newFormData));
         resetForm();
 
+        
     }
 
 
   return (
    <FormDataContext.Provider value={{formData,handleSubmit}}>
-    <AdminForm />
+    {children}
 
    </FormDataContext.Provider>
   )
