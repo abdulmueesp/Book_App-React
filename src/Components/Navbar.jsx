@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     
-    <div className="w-full  h-16 border flex justify-between">
+    <div className="w-full  h-[66px] bg-white border flex justify-between fixed  ">
       <div className="flex space-x-2   items-center lg:ml-0  xl:ml-28">
         <img src={logo} alt="" className=" w-10 h-6 sm:w-20 sm:h-12" />
         <h1 className="font-headTxt font-semibold text-sm sm:text-lg ">Book Palace</h1>

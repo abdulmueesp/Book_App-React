@@ -11,3 +11,12 @@
 .footer_txt{
    @apply font-medium
 }
+.grid_box{
+    @apply w-[220px] h-[300px] bg-white border rounded-md shadow-lg flex flex-col items-center
+}
+.admin_nav_li{
+   @apply text-white font-semibold hover:bg-white w-24 h-8 rounded-md text-center hover:text-black
+}
+.adminform_input{
+    @apply border-2 border-black w-[300px] rounded-xl
+}

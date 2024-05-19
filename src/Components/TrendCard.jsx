@@ -13,7 +13,7 @@ const TrendCard = () => {
    image1,image2,image3,image4,image5,image6,image7,image8,image9
   ];
   return (
-    <div className="overflow-x-scroll w-full  h-min mb-12 flex space-x-3 ">
+    <div className="overflow-x-scroll w-full  h-min mb-12 flex space-x-3" >
       {images.map((image,index)=>(
          <img src={image} alt="" className="h-72" />
       ))}
