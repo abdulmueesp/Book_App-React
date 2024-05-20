@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const AdminNavbar = () => {
   return (
     <div className='w-full h-14 bg-teal-900 flex justify-between'>
@@ -10,9 +10,12 @@ const AdminNavbar = () => {
         <ul className=' flex w-52 h-14  space-x-5 mr-[150px]  justify-center items-center'>
 
           <li className={`admin_nav_li`}>
-            ADD FORM
+            <Link to="/admin">BOOKS</Link>
             </li>
-          <li className={`admin_nav_li`}>BOOKS</li>
+
+          <li className={`admin_nav_li`}>
+            <Link to="/adminform">ADD FORM</Link>
+            </li>
         </ul>
       </div>
     </div>
