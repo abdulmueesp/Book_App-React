@@ -9,11 +9,11 @@ const Home = () => {
   return (
     <div>
        
-      <Navbar />
+      
       <Banner />
       <Popular />
       <TrendCard />
-      <Footer />
+      
     </div>
   )
 }
